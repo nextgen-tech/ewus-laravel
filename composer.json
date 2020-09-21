@@ -1,0 +1,28 @@
+{
+    "name": "etermed/ewus-laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Krzysztof Grabania",
+            "email": "krzysztof.grabania@etermed.pl"
+        }
+    ],
+    "require": {
+        "php" : "^7.2|^8.0",
+        "etermed/ewus": "0.*",
+        "illuminate/support": "^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Etermed\\Laravel\\Ewus\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Etermed\\Laravel\\Ewus\\ServiceProvider"
+            ]
+        }
+    }
+}
