@@ -5,6 +5,7 @@ namespace Etermed\Laravel\Ewus;
 
 use Etermed\Ewus\Contracts\Connection;
 use Etermed\Ewus\Handler;
+use Etermed\Laravel\Ewus\Commands\PasswordCommand;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
@@ -36,12 +37,14 @@ class ServiceProvider extends BaseServiceProvider
     private function registerBindings(): void
     {
         $this->app->singleton(Connection::class, function ($app) {
+            /** @var \Etermed\Laravel\Ewus\ConnectionManager */
             $manager = $app->make(ConnectionManager::class);
 
             return $manager->driver();
         });
 
         $this->app->singleton(Handler::class, function ($app) {
+            /** @var \Illuminate\Contracts\Config\Repository */
             $config = $app->make('config');
 
             $handler = new Handler();
@@ -58,18 +61,27 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * @inheritDoc
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/ewus.php' => config_path('ewus.php'),
+            __DIR__ . '/../config/ewus.php' => $this->app->configPath('ewus.php'),
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands(PasswordCommand::class);
+        }
     }
 
     /**
      * @inheritDoc
+     *
+     * @return string[]
      */
-    public function provides()
+    public function provides(): array
     {
-        [Connection::class, Handler::class];
+        return [
+            Connection::class,
+            Handler::class,
+        ];
     }
 }
