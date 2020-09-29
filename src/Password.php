@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Laravel\Ewus;
+namespace NGT\Laravel\Ewus;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Filesystem\Filesystem as Storage;

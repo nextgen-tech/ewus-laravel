@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 ETER-MED Sp. z o.o.
+Copyright (c) 2020 NextGen-Tech.pl sp. z o.o.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

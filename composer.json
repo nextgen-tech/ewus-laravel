@@ -1,32 +1,32 @@
 {
-    "name": "etermed/ewus-laravel",
+    "name": "nextgen-tech/ewus-laravel",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Krzysztof Grabania",
-            "email": "krzysztof.grabania@etermed.pl"
+            "email": "info@nextgen-tech.pl"
         }
     ],
     "require": {
         "php" : "^7.2|^8.0",
-        "etermed/ewus": "^0.2|^1.0",
         "illuminate/contracts": "^6.0|^7.0|^8.0",
         "illuminate/support": "^6.0|^7.0|^8.0",
-        "illuminate/console": "^6.0|^7.0|^8.0"
+        "illuminate/console": "^6.0|^7.0|^8.0",
+        "nextgen-tech/ewus": "^0.3|^1.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.43"
     },
     "autoload": {
         "psr-4": {
-            "Etermed\\Laravel\\Ewus\\": "src/"
+            "NGT\\Laravel\\Ewus\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Etermed\\Laravel\\Ewus\\ServiceProvider"
+                "NGT\\Laravel\\Ewus\\ServiceProvider"
             ]
         }
     }

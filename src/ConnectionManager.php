@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Laravel\Ewus;
+namespace NGT\Laravel\Ewus;
 
-use Etermed\Ewus\Connections\HttpConnection;
-use Etermed\Ewus\Connections\SoapConnection;
-use Etermed\Ewus\Contracts\Connection;
 use Illuminate\Support\Manager;
+use NGT\Ewus\Connections\HttpConnection;
+use NGT\Ewus\Connections\SoapConnection;
+use NGT\Ewus\Contracts\Connection;
 
 class ConnectionManager extends Manager
 {
     /**
      * Create an instance of HTTP connection driver.
      *
-     * @return  \Etermed\Ewus\Connections\HttpConnection
+     * @return  \NGT\Ewus\Connections\HttpConnection
      */
     public function createHttpDriver(): HttpConnection
     {
@@ -23,7 +23,7 @@ class ConnectionManager extends Manager
     /**
      * Create an instance of SOAP connection driver.
      *
-     * @return  \Etermed\Ewus\Connections\SoapConnection
+     * @return  \NGT\Ewus\Connections\SoapConnection
      */
     public function createSoapDriver(): SoapConnection
     {

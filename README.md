@@ -1,6 +1,6 @@
 # Laravel eWUŚ
 
-This package is Laravel wrapper for [etermed/ewus](https://github.com/etermed/ewus-php) package.
+This package is Laravel wrapper for [nextgen-tech/ewus](https://github.com/nextgen-tech/ewus-php) package.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ This package is Laravel wrapper for [etermed/ewus](https://github.com/etermed/ew
 ## Installation
 
 ```sh
-composer require etermed/ewus-laravel
+composer require nextgen-tech/ewus-laravel
 ```
 
 Next run artisan command to set current password to eWUŚ:

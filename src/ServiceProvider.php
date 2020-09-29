@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Laravel\Ewus;
+namespace NGT\Laravel\Ewus;
 
-use Etermed\Ewus\Contracts\Connection;
-use Etermed\Ewus\Handler;
-use Etermed\Laravel\Ewus\Commands\PasswordCommand;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use NGT\Ewus\Contracts\Connection;
+use NGT\Ewus\Handler;
+use NGT\Laravel\Ewus\Commands\PasswordCommand;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -37,7 +37,7 @@ class ServiceProvider extends BaseServiceProvider
     private function registerBindings(): void
     {
         $this->app->singleton(Connection::class, function ($app) {
-            /** @var \Etermed\Laravel\Ewus\ConnectionManager */
+            /** @var \NGT\Laravel\Ewus\ConnectionManager */
             $manager = $app->make(ConnectionManager::class);
 
             return $manager->driver();

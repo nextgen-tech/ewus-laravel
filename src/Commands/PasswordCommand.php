@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Etermed\Laravel\Ewus\Commands;
+namespace NGT\Laravel\Ewus\Commands;
 
-use Etermed\Ewus\Exceptions\ResponseException;
-use Etermed\Ewus\Handler;
-use Etermed\Ewus\Requests\ChangePasswordRequest;
-use Etermed\Ewus\Requests\LoginRequest;
-use Etermed\Ewus\Responses\LoginResponse;
-use Etermed\Laravel\Ewus\Password;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Support\Str;
+use NGT\Ewus\Exceptions\ResponseException;
+use NGT\Ewus\Handler;
+use NGT\Ewus\Requests\ChangePasswordRequest;
+use NGT\Ewus\Requests\LoginRequest;
+use NGT\Ewus\Responses\LoginResponse;
+use NGT\Laravel\Ewus\Password;
 use Throwable;
 
 class PasswordCommand extends Command
@@ -42,14 +42,14 @@ class PasswordCommand extends Command
     /**
      * The password storage instance.
      *
-     * @var  \Etermed\Laravel\Ewus\Password
+     * @var  \NGT\Laravel\Ewus\Password
      */
     private $password;
 
     /**
      * The handler instance.
      *
-     * @var  \Etermed\Ewus\Handler
+     * @var  \NGT\Ewus\Handler
      */
     private $handler;
 
@@ -86,11 +86,11 @@ class PasswordCommand extends Command
 
         try {
             $loginRequest = $this->loginRequest($oldPassword);
-            /** @var \Etermed\Ewus\Responses\LoginResponse */
+            /** @var \NGT\Ewus\Responses\LoginResponse */
             $login = $this->handler->handle($loginRequest);
 
             $changePasswordRequest = $this->changePasswordRequest($login, $oldPassword, $newPassword);
-            /** @var \Etermed\Ewus\Responses\ChangePasswordResponse */
+            /** @var \NGT\Ewus\Responses\ChangePasswordResponse */
             $changePassword = $this->handler->handle($changePasswordRequest);
         } catch (ResponseException $e) {
             $this->error("[{$e->getType()}] {$e->getMessage()}");
@@ -148,7 +148,7 @@ class PasswordCommand extends Command
      * Get login request to eWUŚ.
      *
      * @param   string  $currentPassword
-     * @return  \Etermed\Ewus\Requests\LoginRequest
+     * @return  \NGT\Ewus\Requests\LoginRequest
      */
     private function loginRequest(string $currentPassword): LoginRequest
     {
@@ -164,10 +164,10 @@ class PasswordCommand extends Command
     /**
      * Get change password request.
      *
-     * @param   \Etermed\Ewus\Responses\LoginResponse  $login
-     * @param   string                                 $oldPassword
-     * @param   string                                 $newPassword
-     * @return  \Etermed\Ewus\Requests\ChangePasswordRequest
+     * @param   \NGT\Ewus\Responses\LoginResponse  $login
+     * @param   string                             $oldPassword
+     * @param   string                             $newPassword
+     * @return  \NGT\Ewus\Requests\ChangePasswordRequest
      */
     private function changePasswordRequest(
         LoginResponse $login,
