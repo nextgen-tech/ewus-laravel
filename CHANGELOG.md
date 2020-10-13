@@ -1,5 +1,9 @@
 # Laravel eWUŚ changelog
 
+## v1.0.0 - 2020-10-13
+
+* First release
+
 ## v0.2.0 - 2020-09-29
 
 * Change namespace
