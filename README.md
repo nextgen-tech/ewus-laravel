@@ -4,9 +4,9 @@ This package is Laravel wrapper for [nextgen-tech/ewus](https://github.com/nextg
 
 ## Requirements
 
-|  Version | Laravel |
-| -------- | ------- |
-| >= 0.0.1 |  >= 6.0 |
+| Version | Laravel | PHP    |
+| ------- | ------- | ------ |
+| 1.x     | >= 6.0  | >= 7.3 |
 
 ## Installation
 
@@ -26,6 +26,10 @@ php artisan ewus:password --init
 
 * **EWUS_SANDBOX_MODE** (*default: false*) - disables/enables sandbox mode
 * **EWUS_CONNECTION** (*default: http*) - connection used for communication
+
+### Connection
+
+* **EWUS_CONNECTION_TIMEOUT** (*used only by http connection*) - duration to timeout request, in seconds
 
 ### Password
 
